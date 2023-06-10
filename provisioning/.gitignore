@@ -1,8 +1,9 @@
 isucon-admin
 /isucon-env-checker/isucon-env-checker
-mitamae/cookbooks/envchecker/isucon-env-checker
-mitamae/cookbooks/blackauth/blackauth
-mitamae.tar.gz
-initial_data.tar.gz
+/mitamae/cookbooks/envchecker/isucon-env-checker
+/mitamae/cookbooks/blackauth/blackauth
 /mitamae/cookbooks/nginx/tls/key.pem
 /mitamae/cookbooks/nginx/tls/fullchain.pem
+/mitamae.tar.gz
+/initial_data.tar.gz
+/blackauth
