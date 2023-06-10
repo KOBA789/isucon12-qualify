@@ -5,3 +5,5 @@ mitamae/cookbooks/blackauth/blackauth
 mitamae.tar.gz
 initial_data.tar.gz
 isucon12-qualify/
+/mitamae/cookbooks/nginx/tls/key.pem
+/mitamae/cookbooks/nginx/tls/fullchain.pem
