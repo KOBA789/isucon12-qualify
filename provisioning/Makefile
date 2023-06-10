@@ -11,7 +11,7 @@ clean:
 	rm -rf mitamae.tar.gz isucon12-qualify* blackauth initial_data.tar.gz
 
 initial_data.tar.gz:
-	gh release list | awk '/Latest/{print $$3}' | xargs gh release download --dir .
+	gh release download -p $@
 
 isucon12-qualify:
 	gh repo clone isucon/isucon12-qualify -- --depth=1 --branch=$(BRANCH)
