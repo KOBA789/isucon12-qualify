@@ -1,7 +1,7 @@
 export BRANCH := $(shell git branch --contains | fgrep '*' | cut -d ' ' -f 2)
 
-.PHONY: build clean
 build: isucon12-qualify mitamae.tar.gz
+.PHONY: build clean certs
 	packer build qualify.pkr.hcl
 
 blackauth:
@@ -17,6 +17,9 @@ isucon12-qualify:
 	gh repo clone isucon/isucon12-qualify -- --depth=1 --branch=$(BRANCH)
 	cd isucon12-qualify/bench && GOOS=linux GOARCH=amd64 make
 
-mitamae.tar.gz: initial_data.tar.gz blackauth
+mitamae.tar.gz: initial_data.tar.gz blackauth certs
 	install blackauth mitamae/cookbooks/blackauth/
 	tar czvf mitamae.tar.gz mitamae/
+
+certs:
+	gh release -R KOBA789/t.isucon.pw download -p 'key.pem' -p 'fullchain.pem' --dir mitamae/cookbooks/nginx/tls/ --clobber
