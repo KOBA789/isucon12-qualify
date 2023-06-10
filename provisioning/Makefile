@@ -17,9 +17,6 @@ isucon12-qualify:
 	gh repo clone isucon/isucon12-qualify -- --depth=1 --branch=$(BRANCH)
 	cd isucon12-qualify/bench && GOOS=linux GOARCH=amd64 make
 
-isucon12-qualify.tar.gz: isucon12-qualify
-	cd isucon12-qualify && tar czf ../isucon12-qualify.tar.gz .
-
 mitamae.tar.gz: initial_data.tar.gz blackauth
 	install blackauth mitamae/cookbooks/blackauth/
 	tar czvf mitamae.tar.gz mitamae/
